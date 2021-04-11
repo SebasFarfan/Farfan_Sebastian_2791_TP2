@@ -6,7 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-
+import org.springframework.web.servlet.ModelAndView;
 
 import ar.edu.unju.fi.tp2.model.Producto;
 import ar.edu.unju.fi.tp2.service.IProductoService;
@@ -43,11 +43,12 @@ public class ProductoController {
      * @return String que es el nombre de la vista 
      */
     @GetMapping("/producto/ultimo")
-    public String mostrarUltimoProducto(Model model){
+    public ModelAndView mostrarUltimoProducto(){
         Producto producto = productoService.obtenerUltimoProducto();
-        model.addAttribute(producto);
+        ModelAndView model = new ModelAndView("ultimoProducto");
+        model.addObject("ultimoProducto", producto);
 
-        return "ultimoProducto";
+        return model;
 
 
     }

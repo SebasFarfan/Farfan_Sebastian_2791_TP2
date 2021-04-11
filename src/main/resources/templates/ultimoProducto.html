@@ -7,17 +7,17 @@
     <title>Ultimo Producto</title>
 </head>
 <body>
-    <div th:object="${producto}">
+    <div>
         <h1>Detalle del último Producto</h1>
-        <h3>Código: <span th:text="${producto.codigo}"></span>
+        <h3>Código: <span th:text="${ultimoProducto.codigo}"></span>
             <br>
-            Nombre: <span th:text="${producto.nombre}"></span>
+            Nombre: <span th:text="${ultimoProducto.nombre}"></span>
             <br>
-            Precio: <span th:text="${producto.precio}"></span>
+            Precio: <span th:text="${ultimoProducto.precio}"></span>
             <br>
-            Marca: <span th:text="${producto.marca}"></span>
+            Marca: <span th:text="${ultimoProducto.marca}"></span>
             <br>
-            Stock: <span th:text="${producto.stock}"></span>
+            Stock: <span th:text="${ultimoProducto.stock}"></span>
         </h3>
         <a href="/producto">Volver a la página de carga de nuevo producto</a>        
     </div>
