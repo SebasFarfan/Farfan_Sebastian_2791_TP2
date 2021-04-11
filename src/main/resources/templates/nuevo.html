@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo</title>
+</head>
+<body>
+    <h1>Registro Nuevo Producto</h1>
+    <hr>
+    <div>
+        <form th:action="@{/producto/guardar}" th:object="${producto}" method="POST">
+            <label for="codigo">Codigo</label>            
+            <input type="number" id="codigo" th:field="*{codigo}">
+            <br>
+            <br>
+            <label for="nombre">Nombre</label>            
+            <input type="text" id="nombre" th:field="*{nombre}" placeholder="Ingrese nombre">
+            <br>
+            <br>
+            <label for="precio">Precio</label>            
+            <input type="number" id="precio" th:field="*{precio}" step="any">
+            <br>
+            <br>
+            <label for="marca">Marca</label>            
+            <input type="text" id="marca" th:field="*{marca}" placeholder="Ingrese marca">
+            <br>
+            <br>
+            <label for="stock">Stock</label>            
+            <input type="number" id="stock" th:field="*{stock}">
+            <br>
+            <br>
+            <br>
+            <hr>
+            <input type="submit" value="Guardar Producto">
+        </form>            
+    </div>
+</body>
+</html>
